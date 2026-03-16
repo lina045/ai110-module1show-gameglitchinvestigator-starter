@@ -120,7 +120,7 @@ with st.expander("Developer Debug Info"):
 
 show_hint = st.checkbox("Show hint", value=True)
 
-with st.form("guess_form"):
+with st.form("guess_form"): #FIX: Updated code along with Claude to use a form for guess submission and new game button
     raw_guess = st.text_input(
         "Enter your guess:",
         key=f"guess_input_{difficulty}"
@@ -157,10 +157,7 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
+        secret = st.session_state.secret
 
         outcome, message = check_guess(guess_int, secret)
 
