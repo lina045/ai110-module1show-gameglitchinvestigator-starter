@@ -23,7 +23,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 - Used Claude as the AI tool for this project 
 - Focused on the issue where pressing the enter key doesn't actually submit the number, you have to manually press the submit button for it do anything 
-- The first thing I did was input the issue and ask the reasoning behind it, but it returned 
+- The first thing I did was input the issue and ask the reasoning behind it, but it returned a long and confusing output, making it difficult to pinpoint the issue, so I created a more concise question, asking what line in the code deals with the enter key, and what line could be causing the error behind there being no submission of the number
 - 
 ---
 
@@ -34,6 +34,10 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
+- Firstly, by reviewing the changes suggested by the AI, particularly making sure the logic flowed correctly and followed similar pattern to other logic in the code. 
+- Then running multiple tests created by the AI making sure all are passing as expecting and running the app again testing multiple inputs
+- One test for the enter button error checks if nothing was inputted, this makes sure the app is working as expected, where nothing should occur if nothing is inputted 
+- Yes, after finding and correcting the error the AI was able to design comprehensive tests tomake sure errors were fixed correctly 
 ---
 
 ## 4. What did you learn about Streamlit and state?
@@ -42,6 +46,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 - What change did you make that finally gave the game a stable secret number?
 
+- The number kept changing in the original app because the number is being compared as an integer in some cases and as a string other times, making the correct guess be rejected every other turn
+- Anytime you interact with a streamlit app the streamlit reruns the entire python script, not like a normal app where only one funciton is called, the whole file reexecutes 
+- The change is that the secret is now always passed as an integer to check_guess 
 ---
 
 ## 5. Looking ahead: your developer habits
@@ -50,3 +57,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+- A habit I want to reuse is creating concise and direct questions for the AI that will produce the most useful outcome
+- Something I would do differently is not starting out questions with vague inputs, but rather starting with these detailed questions to avoid wasting time or confusing myself with its outputs
+- It changed how I think because it showed that AI is not always helpful, and can cause more confusing answers if prompts are not clear 
